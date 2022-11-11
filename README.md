@@ -53,3 +53,31 @@ If opencv is not install you can run the follwing command in terminal which has 
 $ pip install opencv-python
 ```
 
+Now we have a server i.e the world and clients i.e actors such as cars, sensors, pedestrains. We need a list to store actors. Also we need to destory them once we exit because without these our actors will be still on server.
+
+```
+actor_list = []
+try:
+
+
+finally:
+
+    print('destroying actors')
+    for actor in actor_list:
+        actor.destroy()
+    print('done.')
+```
+
+We have World(server), blueprint, and actors(clients) in Carla. To begin, we'll connect to our server, get the world, and then access the blueprints. 
+```
+actor_list = []
+try:
+    client = carla.Client('localhost', 2000)
+    client.set_timeout(2.0)
+
+    world = client.get_world()
+
+    blueprint_library = world.get_blueprint_library()
+```
+Sometimes you may get an error saying "Make sure that your simulator is ready and is connecte to localhost:2000". This can ne rectified by restarting all the Carla windows and terminals/cmd and increase set_timeout.
+    
