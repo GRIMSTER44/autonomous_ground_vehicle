@@ -1,4 +1,4 @@
-# Autonomous_Car_Model
+# Autonomous_ground_vehilce
 ## Getting started with Carla
 [Carla](https://carla.org) is an open-source autonomous driving environment that also comes with a Python API to interact with it. Carla helps us to create an environment where we can use a car mounted with a bunch of sensors to emulate real-life self-driving car.
 ## Setting Carla enviornment
