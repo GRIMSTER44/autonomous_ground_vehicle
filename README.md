@@ -1,14 +1,52 @@
-# Autonomous_ground_vehicle
-We have developed an autonomous vehicle model using deep learning. Deep learning is used for predicting steering angle. Raspberry pi 4 model B is used for interfacing. Testing video of our proposed vehicle on sample track can be found [here](https://drive.google.com/file/d/1HAA9iVvYc70xF-zYHqx6fOmBDxKFQHcL/view?usp=share_link).
-## Getting started with Carla
-[Carla](https://carla.org) is an open-source autonomous driving environment that also comes with a Python API to interact with it. Carla helps us to create an environment where we can use a car mounted with a bunch of sensors to emulate real-life self-driving car. Refer the [link](https://carla.readthedocs.io/en/latest/start_quickstart/) for installing and running carla. For dataset collection a camera has been mounted in front of vehicle and its images and corresponding steering and throtle have been collected. The code for same can be found [here](https://github.com/Deepchavan1/autonomous_ground_vehicle/blob/main/data_collection.py). Place this code under carla/PythonAPI/examples.
-## Raspberry Pi 4 Model B
-Raspberry pi is used for running this models because of its high processing power and smaller size. We have mounted webcam in front of our vehicle. Then by using [opencv](https://opencv.org/) we have captured the image and preprocessed it. Steering angle is then predicted from this images. This angle in passed to servo motor.
-A pretrained model for [road segmentation](https://github.com/AnuragGupta806/Carla-Autonomous-Vehicle/tree/main/Models) has been used. The code for steering angle prediction can be found [here](https://github.com/Deepchavan1/autonomous_ground_vehicle/blob/main/steering_angle_prediction.ipynb). Further, the code which was used in raspberry pi is mentioned [here](https://github.com/Deepchavan1/autonomous_ground_vehicle/blob/main/rasp.py).
-## Problems Faced
-We have faced many problems in this process. Some are mentioned here:
-1. Data collected was from simulation. Hence there was gap between simulation data and real world data which affected the accuracy of overall model.
-2. Turning radius of map created was higher than steering angle from servo! A silly mistake occured due to lack of focus on track creation.
-3. Noise in signal generated for servo, this caused servo to shake.
+# Autonomous Vehicle Deep Learning Project
 
-    
+## Overview
+This project involves developing a deep learning model to predict steering angles for an autonomous vehicle. The model is integrated with a Raspberry Pi 4 Model B for real-time operation and control of the vehicle.
+
+## Features
+- **Deep Learning Model:** Predicts steering angles from images captured by a front-mounted camera.
+- **Real-Time Operation:** Deployed on a Raspberry Pi 4 Model B.
+- **Integration:** Connects with hardware components such as a servo motor for steering adjustments.
+- **Preprocessing:** Images are resized and normalized for improved model accuracy.
+- **Road Segmentation:** Utilizes a pretrained model to assist with identifying drivable areas.
+
+## Getting Started
+
+### Prerequisites
+- **Hardware:**
+  - Raspberry Pi 4 Model B
+  - Front-mounted camera
+  - Servo motor
+
+- **Software:**
+  - Python
+  - TensorFlow
+  - OpenCV
+  - CARLA simulator (for data collection)
+
+### Installation
+
+1. **Clone the Repository:**
+   ```bash
+   git clone <repository_url>
+   cd <repository_directory>
+   ```
+
+## Challenges
+- **Data Discrepancies:** Bridging the gap between simulation and real-world data to improve accuracy.
+- **Track Design:** Ensuring the turning radius in simulations matches the real-world vehicle.
+- **Signal Noise:** Addressing noise in the servo motor signal to reduce instability.
+
+## Future Improvements
+- **Enhanced Data Collection:** More real-world data for better model performance.
+- **Track Accuracy:** Refining simulation tracks to match real-world dynamics.
+- **Noise Reduction:** Implementing advanced filtering techniques for smoother control.
+
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Acknowledgements
+- CARLA Simulator
+- TensorFlow and Keras
+- OpenCV
+
