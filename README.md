@@ -2,6 +2,7 @@
 
 ## Overview
 This project involves developing a deep learning model to predict steering angles for an autonomous vehicle. The model is integrated with a Raspberry Pi 4 Model B for real-time operation and control of the vehicle.
+   [here](https://drive.google.com/file/d/1HAA9iVvYc70xF-zYHqx6fOmBDxKFQHcL/view)
 
 ## Features
 - **Deep Learning Model:** Predicts steering angles from images captured by a front-mounted camera.
